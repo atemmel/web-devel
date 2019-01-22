@@ -6,63 +6,49 @@
 	</head>
 	<body>
 		<div id="inputs">
-			<h2>Order your visitcard here:</h2>
+			<h2>Beställ ditt visitkort här:</h2>
 			<form id="visitcard">
-				<div class="input-container">
-					Company
-					<input type="text" autofocus></input>
+				<div class="row">
+				<div class="column">
+					Företag<br>
+					Efternamn<br>
+					Förnamn<br>
+					Titel<br>
+					Telefon<br>
+					E-post<br>
+					Bakgrundsfärg<br>
+					Textfärg<br>
+					Typsnitt<br>
 				</div>
-				<div class="input-container">
-					Surname
-					<input type="text"></input>
-				</div>
-				<div class="input-container">
-					Firstname
-					<input type="text"></input>
-				</div>
-				<div class="input-container">
-					Title
-					<input type="text"></input>
-				</div>
-				<div class="input-container">
-					Phone
-					<input type="tel"></input>
-				</div>
-				<div class="input-container">
-					Email
-					<input type="email"></input>
-				</div>
-				<div class="input-container">
-					Background
-					<select name="background">
-						<option value="#42B0F4">Lightblue</option>
-						<option value="#F4D142">Lightyellow</option>
-						<option value="#FFFFFF">White</option>
-						<option value="#40E0D0">Turquoise</option>
-					</select>
-				</div>
-				<div class="input-container">
-					Text color
-					<select name="foreground">
-						<option value="#000000">Black</option>
-						<option value="#0000FF">Blue</option>
-						<option value="#FF0000">Red</option>
-						<option value="#009900">Darkgreen</option>
-					</select>
-				</div>
-				<div class="input-container">
-					Text font
-					<select name="font">
+				<div class="column">
+					<input class="field" type="text" autofocus></input><br>
+					<input class="field" type="text"></input><br>
+					<input class="field" type="text"></input><br>
+					<input class="field" type="text"></input><br>
+					<input class="field" type="tel"></input><br>
+					<input class="field" type="email"></input><br>
+					<select class="field" name="background">
+						<option value="#42B0F4">Ljusblå</option>
+						<option value="#F4D142">Ljusgul</option>
+						<option value="#FFFFFF">Vit</option>
+						<option value="#40E0D0">Turkos</option>
+					</select><br>
+					<select class="field" name="foreground">
+						<option value="#000000">Svart</option>
+						<option value="#0000FF">Blå</option>
+						<option value="#FF0000">Röd</option>
+						<option value="#009900">Mörkgrön</option>
+					</select><br>
+					<select class="field" name="font">
 						<option value="verdana">Verdana</option>
 						<option value="arial">Arial</option>
 						<option value="tahoma">Tahoma</option>
 						<option value="impact">Impact</option>
-					</select>
+					</select><br>
 				</div>
-
+				</div>
 				<br>
-
-				<div class="input-container">
+				<div>
 					<div class="center">
 						<input type="submit"></input>
 						<input type="reset"></input>

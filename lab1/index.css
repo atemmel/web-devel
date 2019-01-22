@@ -1,8 +1,13 @@
 body
 {
-	margin: 0px;
+	font-family: "times new roman";
+	font-size: 16;
 	padding: 0px;
-	font-family: mono;
+	margin: 0px;
+}
+
+input, select
+{
 	font-size: 16;
 }
 
@@ -11,18 +16,11 @@ div
 	position: relative;
 }
 
-select
-{
-	left: 50px;
-	position: relative;
-}
-
 #inputs
 {
-	background: #42B0F4;
-	width: 400px;
-	padding-left: 8px;
-	padding-top: 4px;
+	background: #b0adff;
+	padding-bottom: 4px;
+	width: 300px;
 }
 
 #result
@@ -45,15 +43,24 @@ select
 	font-size: 12px;
 }
 
-.input-container
-{
-	position: relative;
-	padding-bottom: 8px;
-	width: 100%;
-}
-
 .center
 {
 	text-align: center;
 	left: 0px;
+}
+
+.column
+{
+	line-height: 2;
+	padding-right: 10px;
+}
+
+.row
+{
+	display: flex;
+}
+
+.field
+{
+	margin-bottom: 16px;
 }
