@@ -1,0 +1,59 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+	font-family: mono;
+	font-size: 16;
+}
+
+div
+{
+	position: relative;
+}
+
+select
+{
+	left: 50px;
+	position: relative;
+}
+
+#inputs
+{
+	background: #42B0F4;
+	width: 400px;
+	padding-left: 8px;
+	padding-top: 4px;
+}
+
+#result
+{
+	width: 400px;
+}
+
+#company
+{
+	font-size: 20px;
+}
+
+#name, #phone
+{
+	font-size: 14px;
+}
+
+#title, #email
+{
+	font-size: 12px;
+}
+
+.input-container
+{
+	position: relative;
+	padding-bottom: 8px;
+	width: 100%;
+}
+
+.center
+{
+	text-align: center;
+	left: 0px;
+}
