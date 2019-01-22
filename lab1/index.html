@@ -8,46 +8,66 @@
 		<div id="inputs">
 			<h2>Beställ ditt visitkort här:</h2>
 			<form id="visitcard">
-				<div class="row">
-				<div class="column">
-					Företag<br>
-					Efternamn<br>
-					Förnamn<br>
-					Titel<br>
-					Telefon<br>
-					E-post<br>
-					Bakgrundsfärg<br>
-					Textfärg<br>
-					Typsnitt<br>
-				</div>
-				<div class="column">
-					<input class="field" type="text" autofocus></input><br>
-					<input class="field" type="text"></input><br>
-					<input class="field" type="text"></input><br>
-					<input class="field" type="text"></input><br>
-					<input class="field" type="tel"></input><br>
-					<input class="field" type="email"></input><br>
-					<select class="field" name="background">
-						<option value="#42B0F4">Ljusblå</option>
-						<option value="#F4D142">Ljusgul</option>
-						<option value="#FFFFFF">Vit</option>
-						<option value="#40E0D0">Turkos</option>
-					</select><br>
-					<select class="field" name="foreground">
-						<option value="#000000">Svart</option>
-						<option value="#0000FF">Blå</option>
-						<option value="#FF0000">Röd</option>
-						<option value="#009900">Mörkgrön</option>
-					</select><br>
-					<select class="field" name="font">
-						<option value="verdana">Verdana</option>
-						<option value="arial">Arial</option>
-						<option value="tahoma">Tahoma</option>
-						<option value="impact">Impact</option>
-					</select><br>
-				</div>
-				</div>
-				<br>
+				<table>
+					<tr>
+						<td>Företag</td>
+						<td><input class="field" type="text" autofocus></input></td>
+					</tr>
+					<tr>
+						<td>Efternamn</td>
+						<td><input class="field" type="text"></input></td>
+					</tr>
+					<tr>
+						<td>Förnamn</td>
+						<td><input class="field" type="text"></input></td>
+					</tr>
+					<tr>
+						<td>Titel</td>
+						<td><input class="field" type="text"></input></td>
+					</tr>
+					<tr>
+						<td>Telefon</td>
+						<td><input class="field" type="tel"></input></td>
+					</tr>
+					<tr>
+						<td>E-post</td>
+						<td><input class="field" type="email"></input></td>
+					</tr>
+					<tr>
+						<td>Bakgrundsfärg</td>
+						<td>
+							<select class="field" name="background">
+							<option value="#42B0F4">Ljusblå</option>
+								<option value="#F4D142">Ljusgul</option>
+								<option value="#FFFFFF">Vit</option>
+								<option value="#40E0D0">Turkos</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Textfärg</td>
+						<td>
+							<select class="field" name="foreground">
+								<option value="#000000">Svart</option>
+								<option value="#0000FF">Blå</option>
+								<option value="#FF0000">Röd</option>
+								<option value="#009900">Mörkgrön</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>Typsnitt</td>
+						<td>
+							<select class="field" name="font">
+								<option value="verdana">Verdana</option>
+								<option value="arial">Arial</option>
+								<option value="tahoma">Tahoma</option>
+								<option value="impact">Impact</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+				
 				<div>
 					<div class="center">
 						<input type="submit"></input>
