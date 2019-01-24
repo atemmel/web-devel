@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function()
     xmlhttp.send();
 }); 
 
-//Ladda material vid länsclick
+//Ladda material vid länkclick
 document.getElementById('mainnavlist').addEventListener("click", function(e)
 {
-	loadContent(e.target.id, false);
+	loadContent(e.target.id);
 }); 
 
 //Ladda material vid ändring i dropdownmenyn
@@ -53,12 +53,14 @@ document.getElementById("searchlan").addEventListener('change', function(e)
 {
 	var id = e.target.options[e.target.selectedIndex].value;
 
-	loadContent(id, false);
+	loadContent(id);
 });
 
 document.getElementById("searchbutton").addEventListener('click', function(e)
 {
 	var query = document.getElementById("searchText").value;
+
+	if(query == "") return;
 
 	searchContent(query, false);
 });
@@ -68,7 +70,7 @@ function createFullInfoStr(data)
 	var obj = "<div class='container'>";
 	obj += "<h3>" + data.yrkesbenamning + "</h3><br>";
 	obj += data.annonsrubrik + "<br><br>"; 
-	obj += data.anstallningstyp + "<br>";
+	obj += "Anställningstyp: " + data.anstallningstyp + "<br>";
 	obj += "Antal platser: " + data.antalPlatserVisa + "<br>";
 	obj += "Publiceringsdatum: " + data.publiceraddatum + "<br>";
 	obj += "Sista ansökningsdag: " + data.sista_ansokningsdag + "<br><br>";
@@ -88,10 +90,16 @@ function createSmallInfoStr(data)
 }
 
 //Ladda generellt filtrerat via län
-function loadContent(lanId, dataOnly)
+function loadContent(lanId)
 {
 	var info = document.getElementById("info");
 	var xmlhttp = new XMLHttpRequest();
+	var onlyData = document.getElementById("onlyit").checked;
+	var numRows = document.getElementById("numrows").value;
+	var target = onlyData ? 
+		baseURL+"/platsannonser/matchning?lanid="+lanId+"&yrkesomradeid=3&antalrader="  + numRows:
+		baseURL+"/platsannonser/matchning?lanid="+lanId+"&antalrader=" + numRows;
+
 	info.innerHTML = "";
 
 	xmlhttp.onreadystatechange = function() 
@@ -123,7 +131,7 @@ function loadContent(lanId, dataOnly)
 		}
 	};
 
-    xmlhttp.open("GET", baseURL+"/platsannonser/matchning?lanid="+lanId, true);
+    xmlhttp.open("GET", target, true);
     xmlhttp.send();
 }
 
@@ -160,7 +168,6 @@ function searchContent(query, dataOnly)
 		}
 	};
 
-    //xmlhttp.open("GET", baseURL+"/platsannonser/matchning?nyckelord="+query, true);
-    xmlhttp.open("GET", baseURL+"/platsannonser/soklista/yrkesomraden", true);
+    xmlhttp.open("GET", baseURL+"/platsannonser/soklista/yrken/"+query, true);
     xmlhttp.send();
 }
