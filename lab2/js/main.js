@@ -62,7 +62,7 @@ document.getElementById("searchbutton").addEventListener('click', function(e)
 
 	if(query == "") return;
 
-	searchContent(query, false);
+	searchContent(query);
 });
 
 function createFullInfoStr(data)
@@ -135,7 +135,7 @@ function loadContent(lanId)
     xmlhttp.send();
 }
 
-function searchContent(query, dataOnly)
+function searchContent(query)
 {
 	var info = document.getElementById("info");
 	var xmlhttp = new XMLHttpRequest();
