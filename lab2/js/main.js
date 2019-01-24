@@ -1,6 +1,6 @@
 "use strict";
 
-var baseURL = "http://api.arbetsformedlingen.se/af/v0";
+let baseURL = "http://api.arbetsformedlingen.se/af/v0";
 
 // Wait for DOM to load
 document.addEventListener("DOMContentLoaded", function()
@@ -42,12 +42,52 @@ document.addEventListener("DOMContentLoaded", function()
     xmlhttp.send();
 }); 
 
-//
-// Create eventlistener for clicks on dynamically created list of LÃ„N in mainnavlist
-document.getElementById('mainnavlist').addEventListener("click", function(e){
+//Ladda material vid länsclick
+document.getElementById('mainnavlist').addEventListener("click", function(e)
+{
 	loadContent(e.target.id, false);
 }); 
 
+//Ladda material vid ändring i dropdownmenyn
+document.getElementById("searchlan").addEventListener('change', function(e)
+{
+	var id = e.target.options[e.target.selectedIndex].value;
+
+	loadContent(id, false);
+});
+
+document.getElementById("searchbutton").addEventListener('click', function(e)
+{
+	var query = document.getElementById("searchText").value;
+
+	searchContent(query, false);
+});
+
+function createFullInfoStr(data)
+{
+	var obj = "<div class='container'>";
+	obj += "<h3>" + data.yrkesbenamning + "</h3><br>";
+	obj += data.annonsrubrik + "<br><br>"; 
+	obj += data.anstallningstyp + "<br>";
+	obj += "Antal platser: " + data.antalPlatserVisa + "<br>";
+	obj += "Publiceringsdatum: " + data.publiceraddatum + "<br>";
+	obj += "Sista ansökningsdag: " + data.sista_ansokningsdag + "<br><br>";
+	obj += "<a href='" + data.annonsurl + "'><div class='btn'>Sug mig</div></a>";
+	obj += "</div>";
+
+	return obj;
+}
+
+function createSmallInfoStr(data)
+{
+	var obj = "<div class='container'>";
+	obj += "<h3>" + data.namn + "</h3>";
+	obj += "Antal platsannonser: " + data.antal_platsannonser + "<br>";
+	obj += "Antal lediga jobb: " + data.antal_ledigajobb + "<br>";
+	return obj;
+}
+
+//Ladda generellt filtrerat via län
 function loadContent(lanId, dataOnly)
 {
 	var info = document.getElementById("info");
@@ -75,22 +115,52 @@ function loadContent(lanId, dataOnly)
 				for(var i = 0; i < jsonData.length; i++)
 				{
 					var data = jsonData[i];
-					var obj = "<div class='container'>";
-					obj += "<h3>" + data.yrkesbenamning + "</h3><br>";
-					obj += data.annonsrubrik + "<br><br>"; 
-					obj += data.anstallningstyp + "<br>";
-					obj += "Antal platser: " + data.antalPlatserVisa + "<br>";
-					obj += "Publiceringsdatum: " + data.publiceraddatum + "<br>";
-					obj += "Sista ansökningsdag: " + data.sista_ansokningsdag + "<br><br>";
-					obj += "<div class='btn'>Sug mig</div>";
-					obj += "</div>";
-					
+					var obj = createFullInfoStr(data);
+
 					info.innerHTML += obj;
 				}
 			}
 		}
-	}
+	};
 
     xmlhttp.open("GET", baseURL+"/platsannonser/matchning?lanid="+lanId, true);
+    xmlhttp.send();
+}
+
+function searchContent(query, dataOnly)
+{
+	var info = document.getElementById("info");
+	var xmlhttp = new XMLHttpRequest();
+	info.innerHTML = "";
+
+	xmlhttp.onreadystatechange = function() 
+	{
+		if (xmlhttp.readyState == XMLHttpRequest.DONE ) 
+		{
+			if (xmlhttp.status == 400) 
+			{
+				alert('There was an error 400');
+			}
+			else if (xmlhttp.status != 200) 
+			{
+				alert('something else other than 200 was returned');
+			}
+			else
+			{
+				var jsonData = JSON.parse(xmlhttp.responseText);
+				jsonData = jsonData.soklista.sokdata;
+
+				for(var i = 0; i < jsonData.length; i++)
+				{
+					var data = jsonData[i];
+					var obj = createSmallInfoStr(data);
+					info.innerHTML += obj;
+				}
+			}
+		}
+	};
+
+    //xmlhttp.open("GET", baseURL+"/platsannonser/matchning?nyckelord="+query, true);
+    xmlhttp.open("GET", baseURL+"/platsannonser/soklista/yrkesomraden", true);
     xmlhttp.send();
 }
