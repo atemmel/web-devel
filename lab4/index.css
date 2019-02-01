@@ -111,3 +111,8 @@ div
 	width: 40px;
 	display: inline-block;
 }
+
+.delete
+{
+	display: inline-block;
+}
