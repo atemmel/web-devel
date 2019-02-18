@@ -8,18 +8,20 @@
 			$this->file = $path;
 		}
 
-		public function write($data)
+		public function write($data, $flags)
 		{
-			if($this->file = fopen("db.txt", "a"))
+			$file;
+			if($file = fopen($this->file, $flags))
 			{
 				//echo "File is open\n";
 			}
 			else
 			{
-				die("File did not open\n");
+				echo $flags;
+				die("File did not open for write");
 			}
 
-			if(fwrite($this->file, $data) )
+			if(fwrite($file,  $data) )
 			{
 				//echo "Successful write\n";
 			}
@@ -28,7 +30,7 @@
 				die("Did not write\n");
 			}
 
-			if(fclose($this->file) )
+			if(fclose($file) )
 			{
 				//echo "File is closed";
 			}
@@ -41,21 +43,22 @@
 		public function read_all()
 		{
 			$data = "";
-			if($this->file = fopen("db.txt", "r"))
+			$file;
+			if($file = fopen($this->file, "r"))
 			{
 				//echo "File is open\n";
 			}
 			else
 			{
-				die("File did not open\n");
+				die("File did not open for read");
 			}
 
-			while(!feof($this->file) )
+			while(!feof($file) )
 			{
-				$data .= fread($this->file, 8192);
+				$data .= fread($file, 8192);
 			}
 
-			if(fclose($this->file) )
+			if(fclose($file) )
 			{
 				//echo "File is closed";
 			}
@@ -65,6 +68,15 @@
 			}
 
 			return $data;
+		}
+
+		public function delete($index)
+		{
+			$data = $this->read_all();
+			$data = explode(PHP_EOL, $data);
+			array_splice($data, $index, 1);
+			$data = implode(PHP_EOL, $data);
+			$this->write($data, "w");
 		}
 	}
 ?>

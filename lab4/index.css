@@ -12,6 +12,13 @@ div
 	position: relative;
 }
 
+textarea, input
+{
+	font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	resize: none;
+}
+
 #document 
 {
 	background: #FFFFFF;
@@ -112,7 +119,19 @@ div
 	display: inline-block;
 }
 
-.delete
+.delete {
+	border: none;
+	color: #000000;
+}
+
+.delete:hover
 {
+	cursor: pointer;
+}
+
+.delete-form
+{
+	position: relative;
 	display: inline-block;
+	left: 1em;
 }

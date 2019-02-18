@@ -47,9 +47,9 @@
 			return 
 				"<div>
 					Inlägg av " . $author . ": " . $text . ", den " . $date .
-					"<form action='process.php' method='post'>
-						<input type='hidden' value='" . $id . "'>
-						<input type='submit' name='Ta bort' class='delete'>
+					"<form class='delete-form' action='process.php' method='post'>
+						<input type='hidden' name='id' value='" . $id . "'>
+						<input type='submit' value='&#128937;' class='delete'>
 					</form>
 				</div>";
 		}

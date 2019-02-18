@@ -1,6 +1,8 @@
 <?php
 	require "require/create.php";
 	require "require/file.php";
+	require "require/db.php";
+
 	error_reporting(-1);
 	ini_set('display_errors', 'On');
 
@@ -21,20 +23,27 @@
 	<div class="align-center">
 		<h3>Del 1</h3>
 		<form action="process.php" method="post">
-			<input placeholder="Namn" type="text" name="name"><br><br>
-			<input placeholder="Meddelande" type="text" name="text"><br><br>
+			<input maxlength='32' placeholder="Namn" type="text" name="name"><br><br>
+			<textarea rows="4" cols="20" maxlength="128" placeholder="Meddelande" name="text" ></textarea><br><br>
 			<input type="submit">
 		</form>
 		<br>
 <?php
-		$i = 1;
+		$i = 0;
 		foreach($data as &$element)
 		{
-			$post = unserialize($element);
+			$post = unserialize(base64_decode($element) );
 			echo $builder->create_post($post[0], $post[1], $post[2], $i);
 			$i++;
 		}
 ?>
+		<h3>Del 2</h3>
+		<form action="process.php" method="POST">
+			<input maxlength='32' placeholder="Namn" type="text" name="namedb"><br><br>
+			<textarea rows="4" cols="20" maxlength="128" placeholder="Meddelande" name="textdb" ></textarea><br><br>
+			<input type="submit">
+		</form>
+		<br>
 	</div>
 <?php
 	echo $builder->close_main();
