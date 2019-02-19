@@ -1,0 +1,25 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+div
+{
+	position: relative;
+}
+
+#navigation
+{
+	background: black;
+	padding: 5px;
+}
+
+.navigation-button
+{
+	display: inline-block;
+	padding: 5px 15px;
+	border: 1px solid white;
+	color: white;
+	cursor: hand;
+}
