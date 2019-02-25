@@ -2,6 +2,7 @@ body
 {
 	margin: 0px;
 	padding: 0px;
+	font-family: 'B612', sans-serif;
 }
 
 div
@@ -11,15 +12,29 @@ div
 
 #navigation
 {
-	background: black;
-	padding: 5px;
+	background: #251E1F;
+	overflow: hidden;
 }
 
-.navigation-button
+#navigation a
 {
-	display: inline-block;
-	padding: 5px 15px;
-	border: 1px solid white;
-	color: white;
-	cursor: hand;
+	color: #FEFAC5;
+	text-decoration: none;
+	display: block;
+	float: right;
+	text-align: center;
+	padding: 10px 5px;
+	font-size: 24px;
 }
+
+#navigation a:hover
+{
+	color: #FEFAC5;
+	background: #F03D36;
+}
+
+/* Camdy 
+#251E1F //Black
+#F03D36 //Red
+#FEFAC5 //White
+*/
