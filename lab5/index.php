@@ -13,6 +13,16 @@
 		<a href="#about">About</a>
 		<a href="#home">Home</a>
 	</div>
+	<div id="banner">
+		<div id="profile-container">
+			<div class="circle-icon-container">
+			</div>
+		</div>
+		<div class="text-block">
+			<h1>Lorem Ipsum</h1>
+			Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.
+		</div>
+	</div>
 	<div id="main">
 
 	</div>

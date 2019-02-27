@@ -3,6 +3,8 @@ body
 	margin: 0px;
 	padding: 0px;
 	font-family: 'B612', sans-serif;
+	background: #251E1F;
+	color: #FEFAC5;
 }
 
 div
@@ -23,14 +25,45 @@ div
 	display: block;
 	float: right;
 	text-align: center;
-	padding: 10px 5px;
-	font-size: 24px;
+	/*padding: 12px 15px;*/
+	/*padding: 0.75em 0.9375em;*/
+	padding: 1em;
+	font-size: 1.5em;
 }
 
 #navigation a:hover
 {
 	color: #FEFAC5;
 	background: #F03D36;
+}
+
+#banner 
+{
+	padding: 10em;
+}
+
+#profile-container
+{
+	display: inline-block;
+	width: 50%;
+	text-align: center;
+}
+
+.circle-icon-container
+{
+	width: 12em;
+	height: 12em;
+	border: 3px solid #FEFAC5;
+	border-radius: 100%;
+	display: inline-block;
+}
+
+.text-block
+{
+	display: inline-block;
+	font-size: 18px;
+	width: 50%;
+	float: right;
 }
 
 /* Camdy 
