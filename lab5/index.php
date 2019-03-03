@@ -5,9 +5,16 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<link href="https://fonts.googleapis.com/css?family=B612" rel="stylesheet"> 
+	<script src="main.js"></script>
 </head>
 <body>
 	<div id="document">
+	<div id="navigation-sticky">
+		<a href="#contact">Contact</a>
+		<a href="#projects">Projects</a>
+		<a href="#about">About</a>
+		<a href="#home">Home</a>
+	</div>
 	<div id="navigation">
 		<a href="#contact">Contact</a>
 		<a href="#projects">Projects</a>
