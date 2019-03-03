@@ -14,7 +14,8 @@ div
 
 #document
 {
-	width: 70em;
+	/*width: 70em;*/
+	width: 1120px;
 	margin: 0 auto;
 }
 
@@ -44,16 +45,11 @@ div
 #navigation-sticky
 {
 	position: fixed;
-	width: 70em;
-	margin: 0px;
+	width: inherit;
 	top: -70px;
 	transition: top 0.5s;
 	z-index: 1;
 	border-bottom: 3px solid #FEFAC5;
-}
-
-#navigation-sticky a
-{
 }
 
 #banner 
@@ -67,6 +63,7 @@ div
 {
 	padding: 4em 0em;
 }
+
 
 #projects
 {
@@ -89,7 +86,7 @@ div
 {
 	box-shadow: 4px 4px 5px #150E0F;
 	border-top: 4px solid #F03D36;
-	padding: 1em;
+	padding: 2em;
 	position: relative;
 }
 
@@ -121,6 +118,29 @@ div
 	padding: 1em 0em;
 }
 
+@media screen and (max-width: 600px)
+{
+	#document
+	{
+		width: 100%;
+	}
+	
+	#projects
+	{
+		grid-template-columns: none;
+	}
+
+	.text-block
+	{
+		left: 0em;
+	}
+
+	.text-block h1
+	{
+		text-align: center;
+	}
+
+}
 
 /* Camdy 
 #251E1F //Black
