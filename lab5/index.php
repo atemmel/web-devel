@@ -7,6 +7,7 @@
 	<link href="https://fonts.googleapis.com/css?family=B612" rel="stylesheet"> 
 </head>
 <body>
+	<div id="document">
 	<div id="navigation">
 		<a href="#contact">Contact</a>
 		<a href="#projects">Projects</a>
@@ -14,9 +15,7 @@
 		<a href="#home">Home</a>
 	</div>
 	<div id="banner">
-		<div id="profile-container">
-			<div class="circle-icon-container">
-			</div>
+		<div class="circle-icon-container">
 		</div>
 		<div class="text-block">
 			<h1>Lorem Ipsum</h1>
@@ -32,7 +31,6 @@
 		</div>
 		<div class="vspace">
 			<div class="section" id="projects">
-				<!--<h1>Projects</h1>-->
 				<div class="project">1</div>
 				<div class="project">2</div>
 				<div class="project">3</div>
@@ -48,6 +46,7 @@
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			</div>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

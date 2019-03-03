@@ -12,12 +12,16 @@ div
 	position: relative;
 }
 
+#document
+{
+	width: 70em;
+	margin: 0 auto;
+}
+
 #navigation
 {
 	background: #251E1F;
 	overflow: hidden;
-	width: 70em;
-	margin: 0 auto;
 }
 
 #navigation a
@@ -39,24 +43,14 @@ div
 
 #banner 
 {
-	padding: 10em;
-	width: 70em;
-	margin: 0 auto;
-}
-
-#profile-container
-{
-	display: inline-block;
-	width: 50%;
+	padding: 4em 0em;
+	height: auto;
 	text-align: center;
-	float: left;
 }
 
 #main
 {
-	padding: 4em 12em;
-	width: 70em;
-	margin: 0 auto;
+	padding: 4em 0em;
 }
 
 #projects
@@ -98,7 +92,8 @@ div
 	display: inline-block;
 	font-size: 18px;
 	width: 50%;
-	float: right;
+	left: 4em;
+	text-align: left;
 }
 
 .centered
