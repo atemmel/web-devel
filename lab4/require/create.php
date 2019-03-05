@@ -53,5 +53,17 @@
 					</form>
 				</div>";
 		}
+
+		function create_post_db($author, $text, $date, $id)
+		{
+			return 
+				"<div>
+					Inlägg av " . $author . ": " . $text . ", den " . $date .
+					"<form class='delete-form' action='process.php' method='post'>
+						<input type='hidden' name='iddb' value='" . $id . "'>
+						<input type='submit' value='&#128937;' class='delete'>
+					</form>
+				</div>";
+		}
 	}
 ?>

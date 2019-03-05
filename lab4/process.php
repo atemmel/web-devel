@@ -2,6 +2,9 @@
 	require "require/file.php";
 	require "require/db.php";
 
+	error_reporting(-1);
+	ini_set('display_errors', 'On');
+
 	$name = $_POST["name"];
 	$text = $_POST["text"];
 
@@ -10,6 +13,8 @@
 	$name_db = $_POST["namedb"];
 	$text_db = $_POST["textdb"];
 
+	$id_db = $_POST["iddb"];
+
 	function loadFromFile()
 	{
 		global $name, $text, $id;
@@ -17,7 +22,7 @@
 
 		if(isset($name) && isset($text) )
 		{
-			//Anti cancer
+			//Antimisär
 			$name = htmlspecialchars($name, ENT_QUOTES);
 			$text = htmlspecialchars($text, ENT_QUOTES);
 
@@ -41,11 +46,24 @@
 
 	function loadFromDb()
 	{
+		global $name_db, $text_db, $id_db;
 		$db = new DB();
-		global $name_db, $text_db;
-		$db->insert($name_db, $text_db);
+
+		echo "2";
+		if(isset($name_db) && isset($text_db) )
+		{
+			$db->insert($name_db, $text_db);
+		}
+
+		echo "2";
+		if(isset($id_db) )
+		{
+			$db->delete($id_db);
+		}
+		echo "2";
+		header("location:index.php");
 	}
 
 	if(isset($name) && isset($text) || isset($id) ) loadFromFile();
-	if(isset($name_db) && isset($text_db) ) loadFromDb();
+	if(isset($name_db) && isset($text_db) || isset($id_db) ) loadFromDb();
 ?>

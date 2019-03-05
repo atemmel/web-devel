@@ -42,5 +42,16 @@
 			$statement->bindParam(":message", $message);
 			$statement->execute();	//EXECUTE EXECUTE EXECUTE EXECUTE
 		}
+
+		public function delete($id)
+		{
+			error_reporting(-1);
+			ini_set('display_errors', 'On');
+			$query = "delete from GUESTBOOK where id = :id";
+
+			$statement = $this->conn->prepare($query);
+			$statement->bindParam(":id", $id);
+			$statement->execute();
+		}
 	}
 ?>
