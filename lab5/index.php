@@ -5,18 +5,26 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" type="text/css" href="index.css">
-	<link href="https://fonts.googleapis.com/css?family=B612" rel="stylesheet"> 
 	<script src="main.js"></script>
+
+	<!-- External -->
+	<link href="https://fonts.googleapis.com/css?family=B612" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<div id="document">
+		<!--
 		<div id="navigation-sticky">
 			<a href="#contact">Contact</a>
 			<a href="#projects">Projects</a>
 			<a href="#about">About</a>
 			<a href="#home">Home</a>
 		</div>
+		-->
 		<div id="navigation">
+			<a href="javascript:void(0);" class="icon">
+				<i class="fa fa-bars"></i>
+			</a>
 			<a href="#contact">Contact</a>
 			<a href="#projects">Projects</a>
 			<a href="#about">About</a>
@@ -39,6 +47,7 @@
 			</div>
 			<div class="vspace">
 				<div class="section" id="projects">
+					<!--
 					<div class="project">1</div>
 					<div class="project">2</div>
 					<div class="project">3</div>
@@ -46,6 +55,7 @@
 					<div class="project">5</div>
 					<div class="project">6</div>
 					<div class="project">7</div>
+					-->
 				</div>
 			</div>
 			<div class="vspace">

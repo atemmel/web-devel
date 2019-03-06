@@ -42,6 +42,12 @@ div
 	border-bottom: 4px solid #F03D36;
 }
 
+#navigation a.icon
+{
+	display: none;
+	border: none;
+}
+
 #navigation-sticky
 {
 	position: fixed;
@@ -123,6 +129,15 @@ div
 	#document
 	{
 		width: 100%;
+	}
+
+	#navigation a:not(:first-child) 
+	{
+		display: none;
+	}
+	#navigation a.icon 
+	{
+		display: block;
 	}
 	
 	#projects
