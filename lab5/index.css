@@ -5,6 +5,7 @@ body
 	font-family: 'B612', sans-serif;
 	background: #251E1F;
 	color: #FEFAC5;
+	scroll-behavior: smooth;
 }
 
 div
@@ -14,20 +15,21 @@ div
 
 #document
 {
-	/*width: 70em;*/
 	width: 1120px;
 	margin: 0 auto;
 }
 
 #navigation, #navigation-sticky
 {
-	background: #251E1F;
+	/*background: #251E1F;*/
+	/*background: #FEFAC5;*/
 	overflow: hidden;
 }
 
 #navigation a, #navigation-sticky a
 {
 	color: #FEFAC5;
+	/*color: #251E1F;*/
 	text-decoration: none;
 	display: block;
 	float: right;
@@ -35,6 +37,7 @@ div
 	padding: 0.75em 1em;
 	font-size: 1.5em;
 	border-bottom: 4px solid transparent;
+	transition: border 0.2s;
 }
 
 #navigation a:hover, #navigation-sticky a:hover
@@ -42,19 +45,38 @@ div
 	border-bottom: 4px solid #F03D36;
 }
 
+#navigation a.icon
+{
+	display: none;
+	border: none;
+}
+
 #navigation-sticky
 {
+	background: #251E1F;
 	position: fixed;
 	width: inherit;
 	top: -70px;
 	transition: top 0.5s;
 	z-index: 1;
-	border-bottom: 3px solid #FEFAC5;
+	/*border-bottom: 3px solid #FEFAC5;*/
+	box-shadow: 4px 4px 16px #150E0F;
+}
+
+#navigation-sticky a
+{
+	font-size: 1em;
+}
+
+#navigation-sticky a:hover
+{
+	border-bottom: 2px solid #F03D36;
 }
 
 #banner 
 {
 	padding: 4em 0em;
+	padding: 6em 4em 0em 0em;
 	height: auto;
 	text-align: center;
 }
@@ -64,8 +86,7 @@ div
 	padding: 4em 0em;
 }
 
-
-#projects
+#projects-container
 {
 	display: grid;
 	grid-template-columns: auto auto auto;
@@ -73,21 +94,38 @@ div
 	grid-gap: 2em;
 }
 
+#projects a
+{
+	text-decoration: none;
+}
+
 .project
 {
-	border: 3px solid ;
+	/*border: 3px solid ;*/
+	border-bottom: 4px solid transparent;
+	border-top: 4px solid transparent;
 	padding: 1em;
 	font-size: 2em;
 	text-align: center;
+	color: #FEFAC5;
+	transition: border 0.5s, border-radius 0.5s, background 0.5s;
+}
+
+.project:hover
+{
 	border-radius: 0.5em;
+	border-bottom: 4px solid #F03D36;
+	border-top: 4px solid #F03D36;
+	background: #150E0F;
 }
 
 .section
 {
-	box-shadow: 4px 4px 5px #150E0F;
+	box-shadow: 4px 4px 16px #150E0F;
 	border-top: 4px solid #F03D36;
 	padding: 2em;
 	position: relative;
+	background: #251E1F;
 }
 
 .circle-icon-container
@@ -108,6 +146,12 @@ div
 	text-align: left;
 }
 
+.mini
+{
+	font-size: 0.5em;
+	padding: 0.5em;
+}
+
 .centered
 {
 	text-align: center;
@@ -123,6 +167,15 @@ div
 	#document
 	{
 		width: 100%;
+	}
+
+	#navigation a:not(:first-child) 
+	{
+		display: none;
+	}
+	#navigation a.icon 
+	{
+		display: block;
 	}
 	
 	#projects
@@ -142,7 +195,7 @@ div
 
 }
 
-/* Camdy 
+/* Candy 
 #251E1F //Black
 #F03D36 //Red
 #FEFAC5 //White
