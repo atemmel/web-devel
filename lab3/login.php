@@ -1,5 +1,6 @@
 <?php
 	require "require/create.php";
+	require "require/secret.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,11 @@
 		<form action="process.php" method="post">
 			<input placeholder="Username" type="text" name="user"><br><br>
 			<input placeholder="Password" type="password" name="pass"><br><br>
-			<input type="submit">
+			<input type="submit"><br><br>
+<?php
+	echo "User: $correct_user\n<br>";
+	echo "Password: $correct_pass\n<br>";
+?>
 		</form>
 	</div>
 <?php
