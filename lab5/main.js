@@ -1,5 +1,3 @@
-window.onscroll = function() { displayNav(); };
-
 document.addEventListener('DOMContentLoaded', function()
 {
 	var xmlHttp = new XMLHttpRequest();
@@ -16,12 +14,25 @@ document.addEventListener('DOMContentLoaded', function()
 
 	xmlHttp.open("GET", url);
 	xmlHttp.send();
+
+	window.onscroll = function() { displayNav(); };
+
+	document.getElementById("navigation").firstElementChild.onclick = function()
+	{
+		var nav = document.getElementById("navigation");
+		let className = "navigation-responsive";
+
+		if(nav.classList.contains(className) )
+		{
+			nav.classList.remove(className);
+		}
+		else nav.classList.add(className);
+	}
 });
 
 function displayNav()
 {
 	document.getElementById("navigation-sticky").style.top
-		//= document.body.scrollTop > 48 || document.documentElement.scrollTop > 48 ?
 		= document.body.scrollTop > 400 || document.documentElement.scrollTop > 400 ?
 		"0em" : "-70px";
 }
@@ -29,7 +40,6 @@ function displayNav()
 function loadProjects(githubData)
 {
 	var projects = document.getElementById("projects-container");
-	console.log(projects);
 
 	githubData.forEach(function(project)
 	{
@@ -47,7 +57,6 @@ function loadProjects(githubData)
 			+ '<div class="project">' + project.name + '<div class="mini">' 
 			+ project.language + '</div></div></a>';
 
-		console.log(newContent);
 		projects.innerHTML += newContent;
 	});
 }

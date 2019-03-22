@@ -47,15 +47,6 @@
 				<div class="section" id="projects">
 					<h1>Projects</h1>
 					<div id="projects-container">
-					<!--
-					<div class="project">1</div>
-					<div class="project">2</div>
-					<div class="project">3</div>
-					<div class="project">4</div>
-					<div class="project">5</div>
-					<div class="project">6</div>
-					<div class="project">7</div>
-					-->
 					</div>
 				</div>
 			</div>

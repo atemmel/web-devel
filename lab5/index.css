@@ -173,24 +173,46 @@ div
 	{
 		display: none;
 	}
+
 	#navigation a.icon 
 	{
 		display: block;
 	}
+
+	#navigation.navigation-responsive a
+	{
+		display: block;
+	}
+
+	#navigation-sticky
+	{
+		display: none;
+	}
+
+	#banner
+	{
+		padding: 0.8em 0;
+	}
 	
-	#projects
+	.text-block
+	{
+		left: 0;
+		padding: 0;
+	}
+
+	.text-block h1, .section h1
+	{
+		text-align: center;
+	}
+
+	#projects-container
 	{
 		grid-template-columns: none;
 	}
 
-	.text-block
+	.project
 	{
-		left: 0em;
-	}
-
-	.text-block h1
-	{
-		text-align: center;
+		padding: 0;
 	}
 
 }
