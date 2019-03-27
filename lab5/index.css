@@ -19,17 +19,21 @@ div
 	margin: 0 auto;
 }
 
+#profile
+{
+	border-radius: 50%;
+	max-width:100%;
+	max-height:100%;
+}
+
 #navigation, #navigation-sticky
 {
-	/*background: #251E1F;*/
-	/*background: #FEFAC5;*/
 	overflow: hidden;
 }
 
 #navigation a, #navigation-sticky a
 {
 	color: #FEFAC5;
-	/*color: #251E1F;*/
 	text-decoration: none;
 	display: block;
 	float: right;
@@ -59,7 +63,6 @@ div
 	top: -70px;
 	transition: top 0.5s;
 	z-index: 1;
-	/*border-bottom: 3px solid #FEFAC5;*/
 	box-shadow: 4px 4px 16px #150E0F;
 }
 
@@ -101,7 +104,6 @@ div
 
 .project
 {
-	/*border: 3px solid ;*/
 	border-bottom: 4px solid transparent;
 	border-top: 4px solid transparent;
 	padding: 1em;
@@ -182,6 +184,20 @@ div
 	#navigation.navigation-responsive a
 	{
 		display: block;
+		width: 100%;
+		text-align: right;
+		color: #251E1F;
+		background: #FEFAC5;
+		border-bottom: 4px solid #251E1F;
+	}
+
+	#navigation a:hover, #navigation-sticky a:hover
+	{
+	}
+
+	#navigation-responsive
+	{
+		position: fixed;
 	}
 
 	#navigation-sticky

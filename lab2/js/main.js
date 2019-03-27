@@ -74,7 +74,7 @@ function createFullInfoStr(data)
 	obj += "Antal platser: " + data.antalPlatserVisa + "<br>";
 	obj += "Publiceringsdatum: " + data.publiceraddatum + "<br>";
 	obj += "Sista ansökningsdag: " + data.sista_ansokningsdag + "<br><br>";
-	obj += "<a href='" + data.annonsurl + "'><div class='btn'>Sug mig</div></a>";
+	obj += "<a href='" + data.annonsurl + "'><div class='btn'>Läs Mer</div></a>";
 	obj += "</div>";
 
 	return obj;

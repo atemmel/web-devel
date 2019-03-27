@@ -1,13 +1,16 @@
 <?php
 
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta charset="UTF-8">
+	<title>Portfolio</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<script src="main.js"></script>
 
-	<!-- External -->
+	<!-- Externa källor -->
 	<link href="https://fonts.googleapis.com/css?family=B612" rel="stylesheet"> 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -30,6 +33,7 @@
 		</div>
 		<div id="banner">
 			<div class="circle-icon-container">
+				<img src="out.jpg" alt="avatar" id="profile">
 			</div>
 			<div class="text-block">
 				<h1>Lorem Ipsum</h1>
